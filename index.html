@@ -1,12 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Marketing Digital y Desarrollo Web para Pymes y Autónomos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- WCAG 2.2: Fuente Legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
-  <h1>¡Hola mundo desde GitHub Pages!</h1>
-  <p>Esta es mi primera página publicada.</p>
+    <!-- WCAG 2.2: Enlace para saltar a contenido principal -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- CABECERA y NAVEGACIÓN -->
+    <header>
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo" aria-label="Mi Agencia - Inicio">Mi <span style="color:var(--color-primary)">Agencia</span></a>
+            
+            <!-- Botón de Menú para móviles (ARIA) -->
+            <button id="nav-toggle-button" class="nav-toggle-button" aria-controls="main-nav-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+
+            <!-- Menú de Navegación (ARIA role=navigation) -->
+            <nav role="navigation" id="main-nav-menu" class="nav-menu">
+                <a href="index.html" class="nav-link active" aria-current="page">Inicio</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="contacto.html" class="nav-link">Contacto & Kit Digital</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (ARIA role=main) -->
+    <main id="main-content">
+        <!-- HERO SECTION (Basado en la Portada) -->
+        <section class="hero" style="background-image: url('assets/images/hero-pymes.jpg'); background-size: cover; background-position: center; min-height: 70vh;">
+            <div class="container flex flex-col justify-center items-center text-center">
+                <h1 class="text-white text-shadow-lg" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+                    Tu Agencia de Marketing Digital y Desarrollo Web <br>para Pymes y Autónomos
+                </h1>
+                <p>Transformamos pequeñas empresas en marcas digitales exitosas. Especialistas en impulsar pymes y autónomos hacia el crecimiento sostenible.</p>
+                <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                    <a href="contacto.html#form" class="btn btn-primary text-lg">Solicita tu presupuesto gratuito</a>
+                    <a href="servicios.html" class="btn btn-secondary text-lg">Descubre nuestros servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUÉ DIGITALIZARSE (Capítulo 1) -->
+        <section class="bg-white">
+            <div class="container">
+                <h2 class="text-3xl font-extrabold mb-10">Por qué tu pequeña empresa necesita una presencia digital fuerte</h2>
+                <p class="mb-8 max-w-3xl">En el panorama empresarial actual, la presencia digital no es una opción, es una necesidad estratégica. Cada día que pasa sin estar online representa oportunidades perdidas y ventas que van a parar a otras empresas.</p>
+                
+                <!-- Beneficios Clave -->
+                <div class="grid-cols-2 lg:grid-cols-3 text-center mb-12">
+                    <div class="p-6">
+                        <p class="text-6xl font-black text-primary">90%</p>
+                        <h3 class="text-xl mt-2">Consumidores Online</h3>
+                        <p>De los compradores buscan en internet antes de tomar decisiones de compra.</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-6xl font-black text-primary">24/7</p>
+                        <h3 class="text-xl mt-2">Disponibilidad</h3>
+                        <p>Tu negocio abierto las 24 horas para atraer clientes en cualquier momento.</p>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-6xl font-black text-primary">3x</p>
+                        <h3 class="text-xl mt-2">Más Alcance</h3>
+                        <p>Multiplica tu visibilidad y llega a clientes que nunca encontrarías offline.</p>
+                    </div>
+                </div>
+
+                <!-- Beneficios de trabajar con agencia -->
+                <div class="bg-color-bg-light p-8 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-primary">Beneficios de trabajar con una agencia especializada en Pymes</h3>
+                    <div class="grid-cols-2">
+                        <div>
+                            <ul class="styled-list">
+                                <li>Estrategias personalizadas adaptadas a tu presupuesto.</li>
+                                <li>Ahorro real de recursos al externalizar el servicio.</li>
+                                <li>Acceso a tecnología de vanguardia y herramientas especializadas.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="styled-list">
+                                <li>Expertise multidisciplinar (Diseño, SEO, Publicidad, Desarrollo).</li>
+                                <li>Resultados medibles con informes claros y transparentes.</li>
+                                <li>Enfoque en el crecimiento continuo y la estabilidad del negocio.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="bg-primary text-white text-center">
+            <div class="container">
+                <h2 class="text-white border-none">Impulsa tu negocio con la digitalización</h2>
+                <p class="text-xl mb-6">La transformación digital ya no es el futuro, es el presente. ¡Comienza hoy!</p>
+                <a href="contacto.html" class="btn btn-secondary bg-white text-primary hover:bg-gray-100">Contacta para una consulta gratuita</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container grid-cols-2 lg:grid-cols-4">
+            <div>
+                <h4 class="text-white text-xl mb-4">Mi Agencia</h4>
+                <p>Expertos en transformación digital para Pymes y Autónomos.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-4">Navegación</h4>
+                <ul>
+                    <li><a href="servicios.html" class="text-gray-400 hover:text-white">Servicios</a></li>
+                    <li><a href="nosotros.html" class="text-gray-400 hover:text-white">Equipo</a></li>
+                    <li><a href="contacto.html" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    <li><a href="contacto.html#kit-digital" class="text-gray-400 hover:text-white">Kit Digital</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-4">Legal</h4>
+                <ul>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Aviso Legal</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-4">Contacto</h4>
+                <p>Tel: 900 000 000</p>
+                <p>Email: info@miagencia.com</p>
+            </div>
+        </div>
+        <div class="container text-center pt-4 border-t border-gray-700 mt-4">
+            <p>&copy; 2025 Mi Agencia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
