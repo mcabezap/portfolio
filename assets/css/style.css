@@ -1,0 +1,279 @@
+/* ----------------------------------------------------------------
+   1. VARIABLES Y RESET BÁSICO
+---------------------------------------------------------------- */
+:root {
+    /* Paleta de colores basada en el PDF (Rojo/Negro/Blanco) */
+    --color-primary: #D40026; /* Rojo Principal */
+    --color-secondary: #2C3E50; /* Gris Oscuro/Negro */
+    --color-accent: #F9A825; /* Amarillo/Naranja de Acento */
+    --color-text: #333333;
+    --color-bg-light: #F4F4F9;
+    --color-white: #FFFFFF;
+
+    /* Tipografía */
+    --font-family-base: 'Inter', sans-serif;
+    --font-family-heading: 'Poppins', sans-serif;
+}
+
+/* Importar fuentes (Se asume Inter y Poppins están disponibles o se cargarán) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-base);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-bg-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------------------------------------------------
+   2. ACCESIBILIDAD Y ENFOQUE (WCAG 2.2)
+---------------------------------------------------------------- */
+/* Indicador de enfoque visible y claro para elementos interactivos */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 4px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip-Link (solo visible al enfocar) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-accent);
+    color: var(--color-text);
+    padding: 8px;
+    z-index: 1000;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* ----------------------------------------------------------------
+   3. TIPOGRAFÍA Y ESTRUCTURA SEMÁNTICA
+---------------------------------------------------------------- */
+h1, h2, h3, h4 {
+    font-family: var(--font-family-heading);
+    color: var(--color-secondary);
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; border-left: 4px solid var(--color-primary); padding-left: 1rem; }
+h3 { font-size: 1.5rem; }
+
+@media (min-width: 768px) {
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.5rem; }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+section {
+    padding: 3rem 0;
+}
+
+/* ----------------------------------------------------------------
+   4. COMPONENTES PRINCIPALES
+---------------------------------------------------------------- */
+
+/* -- Botones -- */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #A3001F; /* Tono más oscuro de rojo */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* -- Header / Navegación -- */
+header {
+    background-color: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 15px;
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+/* Estilo para el enlace de la página activa (lo manejará el JS) */
+.nav-link.active {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+    font-weight: 600;
+}
+
+/* Menú móvil (oculto por defecto en escritorio) */
+.nav-menu {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .nav-toggle-button {
+        display: none;
+    }
+    .nav-menu {
+        display: flex;
+        gap: 1.5rem;
+    }
+}
+
+/* ----------------------------------------------------------------
+   5. UTILS Y ADAPTACIONES ESPECÍFICAS
+---------------------------------------------------------------- */
+
+/* Grid de cards */
+.grid-cols-2 {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Estilos de Card */
+.card {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 1rem auto 2rem;
+    font-size: 1.1rem;
+}
+
+/* Formularios accesibles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+    padding: 2rem 0;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    font-size: 0.9rem;
+}
+
+/* Estilo para las listas de beneficios/características del PDF */
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+.styled-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+.styled-list li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
