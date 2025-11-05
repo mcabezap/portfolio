@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto, FAQ y Kit Digital - Mi Agencia</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <header>
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo" aria-label="Mi Agencia - Inicio">Mi <span style="color:var(--color-primary)">Agencia</span></a>
+            <button id="nav-toggle-button" class="nav-toggle-button" aria-controls="main-nav-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav role="navigation" id="main-nav-menu" class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="contacto.html" class="nav-link active" aria-current="page">Contacto & Kit Digital</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- SECCIÓN DE CONTACTO -->
+        <section class="bg-white">
+            <div class="container grid-cols-2 items-start">
+                <div>
+                    <h1>Contáctanos y da el primer paso</h1>
+                    <p class="text-xl mb-8">¿Listo para llevar tu negocio al siguiente nivel? Agenda tu consulta gratuita de 1 hora hoy mismo.</p>
+                    
+                    <h2 class="text-2xl mb-4 border-none">Información de Contacto</h2>
+                    <ul class="styled-list">
+                        <li>**Teléfono:** 900 000 000</li>
+                        <li>**Email:** info@miagencia.com</li>
+                        <li>**Horario:** Lun - Vie, 9:00 - 18:00</li>
+                    </ul>
+
+                    <h2 class="text-2xl mt-8 mb-4 border-none">Nuestro Proceso de Inicio</h2>
+                    <ul class="styled-list">
+                        <li>**Consulta Gratuita:** Analizamos tu situación actual y objetivos.</li>
+                        <li>**Evaluación:** Identificamos oportunidades de mejora.</li>
+                        <li>**Propuesta:** Recibe un plan de acción detallado y transparente.</li>
+                    </ul>
+                </div>
+                
+                <!-- FORMULARIO DE CONTACTO (WCAG: labels, tabindex, required) -->
+                <div class="card p-6" id="form">
+                    <h2 class="text-2xl mb-6">Solicita tu Consulta Gratuita</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo <span aria-hidden="true">*</span></label>
+                            <input type="text" id="nombre" name="nombre" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email de Contacto <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" id="telefono" name="telefono">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Cuéntanos sobre tu Proyecto <span aria-hidden="true">*</span></label>
+                            <textarea id="mensaje" name="mensaje" rows="4" required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full mt-4">Enviar Solicitud</button>
+                    </form>
+                    <div id="form-message" role="alert" aria-live="polite" class="mt-4 hidden p-3 rounded text-center text-sm font-semibold"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN KIT DIGITAL (Ayudas y Subvenciones) -->
+        <section class="bg-color-bg-light" id="kit-digital">
+            <div class="container">
+                <h2 class="text-center mb-10">Subvenciones y Ayudas para Digitalizar tu Negocio: El Kit Digital</h2>
+                
+                <div class="grid-cols-2 items-start">
+                    <div>
+                        <h3 class="text-2xl font-bold">1. Bono Digital (Kit Digital)</h3>
+                        <p class="mt-2 mb-4">El Gobierno de España ofrece ayudas de hasta 12.000 € para que pymes y autónomos digitalicen sus negocios. Te ayudamos a gestionarlo como Agentes Digitalizadores Acreditados.</p>
+                        <ul class="styled-list text-base">
+                            <li>Empresas de 10 a 49 empleados: hasta 12.000 €</li>
+                            <li>Empresas de 3 a 9 empleados: hasta 6.000 €</li>
+                            <li>Empresas de 0 a 2 empleados: hasta 2.000 €</li>
+                        </ul>
+                        <p class="mt-4 font-semibold">¡No pierdas esta oportunidad! Las ayudas son limitadas.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">2. Servicios Subvencionables</h3>
+                        <p class="mt-2 mb-4">El Kit Digital cubre una amplia gama de los servicios que ofrecemos:</p>
+                        <ul class="styled-list text-base">
+                            <li>Sitio web y presencia en internet.</li>
+                            <li>Comercio electrónico (Tiendas online).</li>
+                            <li>Gestión de redes sociales.</li>
+                            <li>Business Intelligence y analítica.</li>
+                            <li>Gestión de clientes (CRM).</li>
+                        </ul>
+                        <a href="#form" class="btn btn-primary btn-sm mt-4">Evaluar mi Elegibilidad Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+        <section class="bg-white">
+            <div class="container">
+                <h2 class="text-center mb-8">Preguntas Frecuentes (FAQ)</h2>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- Pregunta 1 -->
+                    <details class="mb-4 p-4 border rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer text-primary">¿Cuánto tiempo tarda en estar lista mi web?</summary>
+                        <p class="mt-2 pl-4">Un sitio web corporativo básico suele estar listo en 4-6 semanas. Proyectos más complejos como tiendas online pueden requerir 8-12 semanas. Te proporcionamos un cronograma detallado desde el principio.</p>
+                    </details>
+                    
+                    <!-- Pregunta 2 -->
+                    <details class="mb-4 p-4 border rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer text-primary">¿Qué diferencia hay entre SEO y publicidad online?</summary>
+                        <p class="mt-2 pl-4">El SEO (posicionamiento orgánico) mejora tu visibilidad de forma natural a medio-largo plazo. La publicidad online (Google Ads, Facebook Ads) genera resultados inmediatos pero requiere inversión continua. Lo ideal es combinar ambas.</p>
+                    </details>
+                    
+                    <!-- Pregunta 3 -->
+                    <details class="mb-4 p-4 border rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer text-primary">¿Cómo sé si mi inversión está dando resultados?</summary>
+                        <p class="mt-2 pl-4">Proporcionamos informes mensuales detallados con todas las métricas relevantes: visitas, posiciones en Google, leads generados, conversiones y ROI. Todo explicado sin tecnicismos innecesarios.</p>
+                    </details>
+                </div>
+
+                <div class="text-center mt-10">
+                    <p class="text-xl">¿Tienes más preguntas? **Llámanos:** <span class="font-bold">900 000 000</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA (Copia del Footer de index.html) -->
+    <footer>
+        <div class="container grid-cols-2 lg:grid-cols-4">
+            <div>
+                <h4 class="text-white text-xl mb-4">Mi Agencia</h4>
+                <p>Expertos en transformación digital para Pymes y Autónomos.</p>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-4">Navegación</h4>
+                <ul>
+                    <li><a href="servicios.html" class="text-gray-400 hover:text-white">Servicios</a></li>
+                    <li><a href="nosotros.html" class="text-gray-400 hover:text-white">Equipo</a></li>
+                    <li><a href="contacto.html" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    <li><a href="contacto.html#kit-digital" class="text-gray-400 hover:text-white">Kit Digital</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-4">Legal</h4>
+                <ul>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Aviso Legal</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidad</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white text-xl mb-4">Contacto</h4>
+                <p>Tel: 900 000 000</p>
+                <p>Email: info@miagencia.com</p>
+            </div>
+        </div>
+        <div class="container text-center pt-4 border-t border-gray-700 mt-4">
+            <p>&copy; 2025 Mi Agencia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
