@@ -1,4 +1,4 @@
-// Archivo: assets/js/script.js
+// Archivo: assets/js/script.js -> subir archivo
 
 document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------------------
