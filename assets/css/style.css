@@ -217,6 +217,7 @@ header {
     color: var(--color-white);
     padding: 4rem 0;
     text-align: center;
+    background-image: url('assets/images/hero-pymes.jpg'); background-size: cover; background-position: center; min-height: 70vh;
 }
 
 .hero p {
